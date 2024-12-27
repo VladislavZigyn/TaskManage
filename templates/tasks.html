@@ -1,0 +1,19 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="{% url 'home' %}">Main</а><br><br>
+    <button><a href="{% url 'add_task' category.title %}">Add a task</a></button>
+    <h2>{{category.title}}</h2>
+    {% for task in tasks %}
+    <table>
+        <td><a href="{% url 'task_del' task.id %}">0</a></td>
+        <td><a href="{% url 'desc' task.id %}">{{task.title}}</a></td>
+    </table>
+
+    {% endfor %}
+</body>
+</html>
